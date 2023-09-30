@@ -33,8 +33,7 @@ type Repository struct {
 // API (Create a user): POST /users
 
 type CreateUserInput struct {
-	httpin.JSONBody
-	*User
+	*User `in:"body"`
 }
 
 func CreateUser(rw http.ResponseWriter, r *http.Request) {
